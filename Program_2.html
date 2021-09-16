@@ -1,0 +1,49 @@
+<!-- registration form 
+checking if the rollnumber is 7 digits long -->
+
+<html>  
+<head>  
+<title> Registration Form</title>  
+</head>  
+<body align="center" >  
+<h1> Registration Form</h1>  
+<table cellspacing="2" align="center" cellpadding="8" border="0">  
+<tr><td> Name</td>   
+<td><input type="text" placeholder="Enter your name" id="n1"></td></tr>  
+<tr><td> Rollnumber </td>  
+<td><input type="text" placeholder="rollnumber" id="e1"></td></tr>  
+<tr><td> Select Course</td>  
+<td><input type="course" placeholder="enter a course" id="p1"></td></tr>  
+
+<tr><td>  
+<input type="submit" value="Create" onClick="create_account()"/>  
+</table>  
+<script type="text/javascript">  
+function create_account(){  
+var n=document.getElementById("n1").value;//name  
+var e=document.getElementById("e1").value;//rollnumber
+var p=document.getElementById("p1").value;  //courses
+//Code for validation  
+        var letters = /^[A-Za-z]+$/;  
+        var val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
+//other validations required code  
+if(n==''||e==''||p==''){  
+alert("Enter each details correctly");  
+}  
+else if(!letters.test(n))  
+        {  
+            alert('Name is incorrect must contain alphabets only');  
+        }  
+else if(document.getElementById("e1").value.length > 7)  
+{  
+alert("Roll Number maximum length is 7");  
+}  
+else
+{  
+alert("You have registered Successfully ");  
+  
+}  
+}  
+</script>  
+</body>  
+</html>  
